@@ -1,0 +1,66 @@
+{
+  "last_run_at": "2026-11-21T08:50:38Z",
+  "date": "2026-11-21",
+  "status": "success",
+  "article_count": 25,
+  "ai_status": "disabled",
+  "sources": [
+    {
+      "name": "TechCrunch",
+      "status": "ok",
+      "count": 20,
+      "error": "",
+      "success_rate": 1.0,
+      "total_runs": 1
+    },
+    {
+      "name": "The Verge",
+      "status": "ok",
+      "count": 10,
+      "error": "",
+      "success_rate": 1.0,
+      "total_runs": 1
+    },
+    {
+      "name": "Ars Technica",
+      "status": "ok",
+      "count": 20,
+      "error": "",
+      "success_rate": 1.0,
+      "total_runs": 1
+    },
+    {
+      "name": "WIRED",
+      "status": "ok",
+      "count": 40,
+      "error": "",
+      "success_rate": 1.0,
+      "total_runs": 1
+    },
+    {
+      "name": "InfoQ 中文",
+      "status": "ok",
+      "count": 20,
+      "error": "",
+      "success_rate": 1.0,
+      "total_runs": 1
+    },
+    {
+      "name": "Hacker News (Top Stories)",
+      "status": "ok",
+      "count": 40,
+      "error": "",
+      "success_rate": 1.0,
+      "total_runs": 1
+    },
+    {
+      "name": "GitHub (Search-based Trending Proxy)",
+      "status": "ok",
+      "count": 15,
+      "error": "",
+      "success_rate": 1.0,
+      "total_runs": 1
+    }
+  ],
+  "error": ""
+}

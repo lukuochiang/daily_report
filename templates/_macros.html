@@ -1,0 +1,27 @@
+{% macro t(zh, en, cls='') -%}
+<span class="{{ cls }}" data-zh="{{ zh }}" data-en="{{ en }}">{{ zh }}</span>
+{%- endmacro %}
+
+{% macro article_card(a, compact=false) -%}
+<article class="news-card{% if compact %} is-compact{% endif %}{% if a.importance >= 4 %} is-highlight{% endif %}"
+         data-id="{{ a.id }}" data-category="{{ a.category }}" data-importance="{{ a.importance }}">
+  <div class="card-top">
+    <span class="badge badge-category">{{ cat_name(a.category, 'zh') }} / {{ cat_name(a.category, 'en') }}</span>
+    <span class="badge badge-importance" title="Importance / 重要性">{{ a.stars }}</span>
+    {% if a.ai_generated %}<span class="badge badge-ai">{{ t('AI 整理', 'AI processed') }}</span>
+    {% else %}<span class="badge badge-raw">{{ t('原文摘要', 'Original excerpt') }}</span>{% endif %}
+  </div>
+  <h3 class="news-title" data-zh="{{ a.title_zh }}" data-en="{{ a.title_en }}">{{ a.title_zh }}</h3>
+  <p class="news-summary" data-zh="{{ a.summary_zh }}" data-en="{{ a.summary_en }}">{{ a.summary_zh }}</p>
+  {% if a.event_size and a.event_size > 1 %}
+  <p class="event-note">{{ t('同一事件报道 · %d 条来源' % a.event_size, '%d sources cover this event' % a.event_size) }}</p>
+  {% endif %}
+  <div class="news-meta">
+    <span class="source">{{ a.source }}</span>
+    <span class="dot">·</span>
+    <time datetime="{{ a.published_at }}">{{ a.time_bj }} {{ t('北京时间', 'BJT') }}</time>
+    {% if a.source_note %}<span class="dot">·</span><span class="note">{{ a.source_note }}</span>{% endif %}
+  </div>
+  <a class="news-link" href="{{ a.source_url }}" target="_blank" rel="noopener noreferrer">{{ t('阅读原文 ↗', 'Read original ↗') }}</a>
+</article>
+{%- endmacro %}

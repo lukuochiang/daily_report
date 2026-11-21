@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block content %}
+<section class="wrap page-head">
+  <p class="eyebrow">ARCHIVES</p>
+  <h1>{{ m.t('历史日报归档', 'Daily Archives') }}</h1>
+  <p>{{ m.t('共', 'Total') }} {{ total_days }} {{ m.t('期日报，', 'issues,') }} {{ total_articles }} {{ m.t('条资讯。按日期倒序排列。', 'stories. Sorted by date, newest first.') }}</p>
+</section>
+<section class="wrap section">
+  <div class="filter-chips" id="month-filters">
+    <button type="button" class="chip active" data-month="all">{{ m.t('全部月份', 'All months') }}</button>
+    {% for month in months %}<button type="button" class="chip" data-month="{{ month.key }}">{{ month.label }}</button>{% endfor %}
+  </div>
+  {% for month in months %}
+  <div class="month-group" data-month="{{ month.key }}">
+    <h2>{{ month.label }}</h2>
+    <div class="archive-grid">
+      {% for day in month.dates %}
+      <a class="archive-card" href="{{ day.url }}">
+        <strong>{{ day.date }}</strong>
+        <span>{{ day.count }} {{ m.t('条资讯', 'stories') }} →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <p class="empty-note">{{ m.t('尚无历史日报。', 'No archived issues yet.') }}</p>
+  {% endfor %}
+</section>
+{% endblock %}

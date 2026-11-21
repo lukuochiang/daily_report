@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block content %}
+<section class="wrap page-head not-found">
+  <p class="eyebrow">404</p>
+  <h1>{{ m.t('页面未找到', 'Page not found') }}</h1>
+  <p>{{ m.t('这个地址不存在或已被移动。', 'This address does not exist or has been moved.') }}</p>
+  <p><a class="button-outline" href="/">{{ m.t('返回首页', 'Back to home') }}</a> <a class="button-outline" href="/archives/">{{ m.t('查看归档', 'Browse archives') }}</a></p>
+</section>
+{% endblock %}

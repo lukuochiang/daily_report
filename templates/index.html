@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block content %}
+<section class="hero wrap">
+  <div class="hero-main">
+    <p class="eyebrow">DAILY TECH BRIEF · {{ current_date }}</p>
+    <h1>{{ m.t('今日科技，一目了然。', 'Today in tech, at a glance.') }}</h1>
+    <p class="hero-sub">{{ m.t('从全球公开资讯中精选科技、互联网、人工智能与开发者生态动态，提供中英双语摘要。', 'A curated daily brief on technology, internet, AI and developer ecosystems, with bilingual summaries.') }}</p>
+    <div class="hero-stats">
+      <div><strong>{{ current_date }}</strong><span>{{ m.t('日报日期', 'Issue date') }}</span></div>
+      <div><strong>{{ latest_count }}</strong><span>{{ m.t('今日新闻', 'Stories today') }}</span></div>
+      <div><strong>{{ total_days }}</strong><span>{{ m.t('历史日报', 'Past issues') }}</span></div>
+    </div>
+  </div>
+  <aside class="hero-aside">
+    <span class="aside-label">{{ m.t('今日重点', "TODAY'S HIGHLIGHTS") }}</span>
+    <ol class="aside-list">
+      {% for a in highlights[:5] %}
+      <li><span class="aside-num">{{ loop.index }}</span><span data-zh="{{ a.title_zh }}" data-en="{{ a.title_en }}">{{ a.title_zh }}</span></li>
+      {% endfor %}
+    </ol>
+    <a class="aside-link" href="/daily/{{ current_date }}/">{{ m.t('查看完整日报 →', 'Open full issue →') }}</a>
+  </aside>
+</section>
+
+<section class="wrap section" id="highlights">
+  <div class="section-head">
+    <h2>{{ m.t('今日重点', 'Top Stories') }}</h2>
+    <span class="section-sub">{{ m.t('按重要性筛选', 'Selected by importance') }}</span>
+  </div>
+  <div class="card-grid">
+    {% for a in highlights[:5] %}{{ m.article_card(a, true) }}{% endfor %}
+  </div>
+</section>
+
+<section class="wrap section" id="trends">
+  <div class="section-head"><h2>{{ m.t('今日科技趋势', 'Technology Trends') }}</h2><span class="section-sub">{{ m.t('AI 整理', 'AI processed') }}</span></div>
+  {% if trends %}
+  <ol class="trend-list">
+    {% for trend in trends %}
+    <li>
+      <span class="trend-num">{{ loop.index }}</span>
+      <div>
+        <h3 data-zh="{{ trend.title_zh }}" data-en="{{ trend.title_en }}">{{ trend.title_zh }}</h3>
+        <p data-zh="{{ trend.summary_zh }}" data-en="{{ trend.summary_en }}">{{ trend.summary_zh }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="empty-note">{{ m.t('本次未生成趋势分析（AI 未启用或未返回结果）。', 'No trend analysis generated in this issue (AI disabled or unavailable).') }}</p>
+  {% endif %}
+</section>
+
+<section class="wrap section" id="topics">
+  <div class="section-head"><h2>{{ m.t('六大分类', 'Explore Topics') }}</h2></div>
+  <div class="topic-grid">
+    {% for slug, zh, en in [
+      ('ai','人工智能','AI & Artificial Intelligence'),
+      ('companies','科技公司','Tech Companies'),
+      ('developers','开发者生态','Developer Ecosystem'),
+      ('internet','互联网动态','Internet & Platforms'),
+      ('business','创业与商业','Startups & Business'),
+      ('security','网络安全与政策','Cybersecurity & Policy')
+    ] %}
+    <a class="topic-card topic-{{ slug }}" href="/categories/{{ slug }}/">
+      <strong data-zh="{{ zh }}" data-en="{{ en }}">{{ zh }}</strong>
+      <span>{{ m.t('查看资讯 →', 'View stories →') }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap section" id="all-news">
+  <div class="section-head">
+    <h2>{{ m.t('今日全部资讯', "Today's Stories") }}</h2>
+    <span class="section-sub"><span id="result-count">{{ latest_count }}</span> {{ m.t('条', 'stories') }}</span>
+  </div>
+  <div class="toolbar">
+    <label class="search-box">
+      <span aria-hidden="true">⌕</span>
+      <input type="search" id="news-search" autocomplete="off" data-zh-ph="搜索标题、摘要、来源…" data-en-ph="Search titles, summaries, sources…" placeholder="搜索标题、摘要、来源…">
+    </label>
+    <div class="filter-chips" id="category-filters">
+      <button type="button" class="chip active" data-filter="all">{{ m.t('全部', 'All') }}</button>
+      {% for slug in ['ai','companies','developers','internet','business','security'] %}
+      <button type="button" class="chip" data-filter="{{ slug }}">{{ cat_name(slug, 'zh') }}</button>
+      {% endfor %}
+    </div>
+    <select id="news-sort" aria-label="排序 / Sort">
+      <option value="importance">{{ m.t('按重要性', 'By importance') }}</option>
+      <option value="time">{{ m.t('按发布时间', 'By publish time') }}</option>
+    </select>
+  </div>
+  <div class="news-list" id="news-list">
+    {% for a in articles %}{{ m.article_card(a) }}{% endfor %}
+  </div>
+  <p class="empty-note" id="no-results" hidden>{{ m.t('没有匹配的新闻，试试其他关键词或分类。', 'No matching stories. Try another keyword or category.') }}</p>
+  <div class="section-foot"><a class="button-outline" href="/daily/{{ current_date }}/">{{ m.t('打开完整日报页 →', 'Open full daily issue →') }}</a></div>
+</section>
+<script type="application/json" id="app-data">{{ app_data | tojson }}</script>
+{% endblock %}

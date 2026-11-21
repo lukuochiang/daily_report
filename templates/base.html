@@ -1,0 +1,70 @@
+{% import '_macros.html' as m %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <link rel="canonical" href="{{ canonical }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="科技互联网每日一报">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">TD</span>
+        <span class="brand-text">
+          <strong>{{ m.t('科技互联网每日一报', 'Tech Internet Daily') }}</strong>
+          <small>{{ m.t('全球科技资讯 · 每日双语精选', 'Global tech news · Daily bilingual brief') }}</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="主导航 / Main navigation">
+        <a href="/" class="{% if canonical == site_url + '/' %}active{% endif %}">{{ m.t('首页', 'Home') }}</a>
+        <a href="/archives/">{{ m.t('历史归档', 'Archives') }}</a>
+        <a href="/categories/ai/">{{ m.t('分类', 'Topics') }}</a>
+        <a href="/about/">{{ m.t('关于', 'About') }}</a>
+      </nav>
+      <button type="button" id="lang-toggle" class="lang-toggle" aria-label="Switch language">EN</button>
+    </div>
+    <div class="category-strip">
+      <div class="wrap strip-inner">
+        {% for slug in ['ai', 'companies', 'developers', 'internet', 'business', 'security'] %}
+        <a href="/categories/{{ slug }}/">{{ cat_name(slug, 'zh') }} <span>/ {{ cat_name(slug, 'en') }}</span></a>
+        {% endfor %}
+      </div>
+    </div>
+  </header>
+
+  {% if is_demo %}
+  <div class="wrap"><div class="demo-banner">{{ m.t('当前为演示数据（example.com 示例链接），不代表真实新闻。', 'Demo data (example.com links only) — not real news.') }}</div></div>
+  {% endif %}
+  {% if ai_status == 'error' or ai_status == 'partial' %}
+  <div class="wrap"><div class="demo-banner">{{ m.t('AI 服务本次未完整返回，部分摘要使用原文内容并已标注。', 'AI service did not fully respond; some summaries fall back to original excerpts.') }}</div></div>
+  {% endif %}
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>{{ m.t('科技互联网每日一报', 'Tech Internet Daily') }}</strong>
+        <p>{{ m.t('每日更新 · 内容为 AI 辅助整理的资讯摘要，版权归原作者与媒体所有。', 'Updated daily. Summaries are AI-assisted; all rights remain with original authors and publishers.') }}</p>
+      </div>
+      <div class="footer-links">
+        <a href="/archives/">{{ m.t('历史归档', 'Archives') }}</a>
+        <a href="/about/">{{ m.t('关于与版权', 'About & Copyright') }}</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

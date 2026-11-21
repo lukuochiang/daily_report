@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block content %}
+<section class="wrap page-head">
+  <p class="eyebrow">TOPIC · {{ category_slug|upper }}</p>
+  <h1 data-zh="{{ category_zh }}" data-en="{{ category_en }}">{{ category_zh }}</h1>
+  <p>{{ m.t('该分类下最近收录', 'Recent stories in this category') }} {{ articles|length }} {{ m.t('条资讯。', 'stories.') }}</p>
+</section>
+<section class="wrap section">
+  <div class="toolbar">
+    <label class="search-box">
+      <span aria-hidden="true">⌕</span>
+      <input type="search" id="news-search" autocomplete="off" data-zh-ph="搜索本分类新闻…" data-en-ph="Search this topic…" placeholder="搜索本分类新闻…">
+    </label>
+    <select id="news-sort" aria-label="排序 / Sort">
+      <option value="time">{{ m.t('按发布时间', 'By publish time') }}</option>
+      <option value="importance">{{ m.t('按重要性', 'By importance') }}</option>
+    </select>
+  </div>
+  <div class="news-list" id="news-list">
+    {% for a in articles %}
+    <div class="category-item">
+      <a class="category-day" href="{{ a.day_url }}">{{ a.day }}</a>
+      {{ m.article_card(a) }}
+    </div>
+    {% endfor %}
+  </div>
+  <p class="empty-note" id="no-results" hidden>{{ m.t('没有匹配的新闻。', 'No matching stories.') }}</p>
+</section>
+<script type="application/json" id="app-data">{{ app_data | tojson }}</script>
+{% endblock %}
