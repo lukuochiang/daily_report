@@ -8,6 +8,8 @@ import re
 
 import requests
 
+from translate import enabled as translation_enabled
+from translate import translate as auto_translate
 from utils import VALID_CATEGORIES, clean_text, settings
 
 logger = logging.getLogger(__name__)
@@ -104,6 +106,7 @@ def fallback_article(item: dict) -> dict:
         "title_en": title if item.get("original_language") != "zh" else title,
         "summary_zh": "【原文摘要，未经 AI 整理】" + excerpt,
         "summary_en": "Original excerpt (AI summary unavailable): " + excerpt,
+        "_raw_excerpt": excerpt,
         "source": item["source"],
         "source_url": item["source_url"],
         "original_title": item["original_title"],
@@ -174,6 +177,41 @@ def validate_trends(value) -> list:
     return trends
 
 
+def apply_auto_translation(articles: list) -> str:
+    """为没有 AI 结果的条目补齐另一语言；返回 auto / partial / disabled。"""
+    if not translation_enabled():
+        return "disabled"
+    total = success = 0
+    for article in articles:
+        if article.get("ai_generated"):
+            continue
+        total += 1
+        excerpt = clean_text(article.get("_raw_excerpt"), 500)
+        if article.get("original_language") == "zh":
+            title = auto_translate(article["original_title"], "en")
+            summary = auto_translate(excerpt, "en")
+            if title:
+                article["title_en"] = title
+            if summary:
+                article["summary_en"] = "【Auto-translated】" + summary
+            done = bool(title and summary)
+        else:
+            title = auto_translate(article["original_title"], "zh-CN")
+            summary = auto_translate(excerpt, "zh-CN")
+            if title:
+                article["title_zh"] = title
+            if summary:
+                article["summary_zh"] = "【自动翻译】" + summary
+            done = bool(title and summary)
+        if done:
+            success += 1
+            article["translation_source"] = "auto"
+        article.pop("_raw_excerpt", None)
+    if not total:
+        return "not_needed"
+    return "auto" if success == total else ("partial" if success else "failed")
+
+
 def process_with_ai(items: list, config: dict, run_date: str, force_disabled: bool = False) -> tuple:
     """返回 (articles, highlights, trends, meta)。"""
     api_key, base, model = ai_config()
@@ -213,6 +251,8 @@ def process_with_ai(items: list, config: dict, run_date: str, force_disabled: bo
                 ai_map[str(entry["id"])] = entry
 
     articles = [build_article(item, ai_map.get(item["id"])) for item in batch_items]
+    meta["translation_status"] = apply_auto_translation(articles)
+    logger.info("双语回退状态: %s", meta["translation_status"])
     if key and len(ai_map) < len(batch_items):
         meta["ai_status"] = "partial" if meta["ai_status"] == "ok" else meta["ai_status"]
         meta["ai_error"] = (meta["ai_error"] + " 部分新闻未获得 AI 结果。").strip()

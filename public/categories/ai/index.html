@@ -4,12 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>人工智能 · 科技互联网每日一报</title>
+  <title>人工智能 · 每日一报</title>
   <meta name="description" content="浏览“人工智能”分类下的科技互联网新闻与中英双语摘要。">
   <link rel="canonical" href="https://daily.fs.kg/categories/ai/">
+  <meta name="theme-color" content="#f5f7fa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="科技互联网每日一报">
-  <meta property="og:title" content="人工智能 · 科技互联网每日一报">
+  <meta property="og:site_name" content="每日一报">
+  <meta property="og:title" content="人工智能 · 每日一报">
   <meta property="og:description" content="浏览“人工智能”分类下的科技互联网新闻与中英双语摘要。">
   <meta property="og:url" content="https://daily.fs.kg/categories/ai/">
   <meta name="twitter:card" content="summary">
@@ -21,9 +23,9 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="/">
-        <span class="brand-mark">TD</span>
+        <span class="brand-mark">每</span>
         <span class="brand-text">
-          <strong><span class="" data-zh="科技互联网每日一报" data-en="Tech Internet Daily">科技互联网每日一报</span></strong>
+          <strong><span class="" data-zh="每日一报" data-en="Daily Brief">每日一报</span></strong>
           <small><span class="" data-zh="全球科技资讯 · 每日双语精选" data-en="Global tech news · Daily bilingual brief">全球科技资讯 · 每日双语精选</span></small>
         </span>
       </a>
@@ -33,22 +35,28 @@
         <a href="/categories/ai/"><span class="" data-zh="分类" data-en="Topics">分类</span></a>
         <a href="/about/"><span class="" data-zh="关于" data-en="About">关于</span></a>
       </nav>
-      <button type="button" id="lang-toggle" class="lang-toggle" aria-label="Switch language">EN</button>
+      <div class="header-actions">
+        <button type="button" id="lang-toggle" class="icon-button lang-toggle" aria-label="Switch language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg>
+          <span class="lang-label">EN</span>
+        </button>
+        <button type="button" id="theme-toggle" class="icon-button theme-toggle" aria-label="切换主题"></button>
+      </div>
     </div>
     <div class="category-strip">
       <div class="wrap strip-inner">
         
-        <a href="/categories/ai/">人工智能 <span>/ AI &amp; Artificial Intelligence</span></a>
+        <a href="/categories/ai/"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></a>
         
-        <a href="/categories/companies/">科技公司 <span>/ Tech Companies</span></a>
+        <a href="/categories/companies/"><span class="" data-zh="科技公司" data-en="Tech Companies">科技公司</span></a>
         
-        <a href="/categories/developers/">开发者生态 <span>/ Developer Ecosystem</span></a>
+        <a href="/categories/developers/"><span class="" data-zh="开发者生态" data-en="Developer Ecosystem">开发者生态</span></a>
         
-        <a href="/categories/internet/">互联网动态 <span>/ Internet &amp; Platforms</span></a>
+        <a href="/categories/internet/"><span class="" data-zh="互联网动态" data-en="Internet &amp; Platforms">互联网动态</span></a>
         
-        <a href="/categories/business/">创业与商业 <span>/ Startups &amp; Business</span></a>
+        <a href="/categories/business/"><span class="" data-zh="创业与商业" data-en="Startups &amp; Business">创业与商业</span></a>
         
-        <a href="/categories/security/">网络安全与政策 <span>/ Cybersecurity &amp; Policy</span></a>
+        <a href="/categories/security/"><span class="" data-zh="网络安全与政策" data-en="Cybersecurity &amp; Policy">网络安全与政策</span></a>
         
       </div>
     </div>
@@ -70,8 +78,8 @@
       <input type="search" id="news-search" autocomplete="off" data-zh-ph="搜索本分类新闻…" data-en-ph="Search this topic…" placeholder="搜索本分类新闻…">
     </label>
     <select id="news-sort" aria-label="排序 / Sort">
-      <option value="time"><span class="" data-zh="按发布时间" data-en="By publish time">按发布时间</span></option>
-      <option value="importance"><span class="" data-zh="按重要性" data-en="By importance">按重要性</span></option>
+      <option value="time" data-zh="按发布时间" data-en="By publish time">按发布时间</option>
+      <option value="importance" data-zh="按重要性" data-en="By importance">按重要性</option>
     </select>
   </div>
   <div class="news-list" id="news-list">
@@ -81,12 +89,13 @@
       <article class="news-card is-highlight"
          data-id="nd5eeee1878b5" data-category="ai" data-importance="4">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★☆</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="ClawDOS – An AI coding agent for DOS" data-en="ClawDOS – An AI coding agent for DOS">ClawDOS – An AI coding agent for DOS</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】Hacker News: 46 points, 13 comments." data-en="Original excerpt (AI summary unavailable): Hacker News: 46 points, 13 comments.">【原文摘要，未经 AI 整理】Hacker News: 46 points, 13 comments.</p>
+  <h3 class="news-title" data-zh="ClawDOS – DOS 的人工智能编码代理" data-en="ClawDOS – An AI coding agent for DOS">ClawDOS – DOS 的人工智能编码代理</h3>
+  <p class="news-summary" data-zh="【自动翻译】黑客新闻：56分，15条评论。" data-en="Original excerpt (AI summary unavailable): Hacker News: 56 points, 15 comments.">【自动翻译】黑客新闻：56分，15条评论。</p>
   
   <div class="news-meta">
     <span class="source">Hacker News (Top Stories)</span>
@@ -103,12 +112,13 @@
       <article class="news-card is-highlight"
          data-id="nc4b0222f29f2" data-category="ai" data-importance="5">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★★</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers" data-en="Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers">Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】Meta is “re-evaluating” 2030 sustainability goals. Will others follow?" data-en="Original excerpt (AI summary unavailable): Meta is “re-evaluating” 2030 sustainability goals. Will others follow?">【原文摘要，未经 AI 整理】Meta is “re-evaluating” 2030 sustainability goals. Will others follow?</p>
+  <h3 class="news-title" data-zh="在 AI 数据中心排放创纪录之际，Meta 重新考虑 2030 年净零排放目标" data-en="Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers">在 AI 数据中心排放创纪录之际，Meta 重新考虑 2030 年净零排放目标</h3>
+  <p class="news-summary" data-zh="【自动翻译】Meta 正在“重新评估”2030 年可持续发展目标。其他人会效仿吗？" data-en="Original excerpt (AI summary unavailable): Meta is “re-evaluating” 2030 sustainability goals. Will others follow?">【自动翻译】Meta 正在“重新评估”2030 年可持续发展目标。其他人会效仿吗？</p>
   
   <div class="news-meta">
     <span class="source">Ars Technica</span>
@@ -125,12 +135,13 @@
       <article class="news-card is-highlight"
          data-id="n6787a271fdfe" data-category="ai" data-importance="5">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★★</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="Experts warn: Nearly everyone in AI is susceptible to a honey-trap scheme right now" data-en="Experts warn: Nearly everyone in AI is susceptible to a honey-trap scheme right now">Experts warn: Nearly everyone in AI is susceptible to a honey-trap scheme right now</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】Techies are building technology that can advance all aspects of the world — but can they protect their hearts? That&#39;s the vulnerability that honey pots exploit." data-en="Original excerpt (AI summary unavailable): Techies are building technology that can advance all aspects of the world — but can they protect their hearts? That&#39;s the vulnerability that honey pots exploit.">【原文摘要，未经 AI 整理】Techies are building technology that can advance all aspects of the world — but can they protect their hearts? That&#39;s the vulnerability that honey pots exploit.</p>
+  <h3 class="news-title" data-zh="专家警告：目前人工智能领域几乎每个人都容易受到“美人计”的影响" data-en="Experts warn: Nearly everyone in AI is susceptible to a honey-trap scheme right now">专家警告：目前人工智能领域几乎每个人都容易受到“美人计”的影响</h3>
+  <p class="news-summary" data-zh="【自动翻译】技术人员正在打造能够推动世界各个方面进步的技术——但他们能保护自己的心脏吗？这就是蜜罐所利用的漏洞。" data-en="Original excerpt (AI summary unavailable): Techies are building technology that can advance all aspects of the world — but can they protect their hearts? That&#39;s the vulnerability that honey pots exploit.">【自动翻译】技术人员正在打造能够推动世界各个方面进步的技术——但他们能保护自己的心脏吗？这就是蜜罐所利用的漏洞。</p>
   
   <div class="news-meta">
     <span class="source">TechCrunch</span>
@@ -147,12 +158,13 @@
       <article class="news-card is-highlight"
          data-id="n00dcab6deae0" data-category="ai" data-importance="5">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★★</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="Show HN: OpenComputer – an open source alternative to Devin" data-en="Show HN: OpenComputer – an open source alternative to Devin">Show HN: OpenComputer – an open source alternative to Devin</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】Hi HN! Utpal here, I&#39;m one of the founders of OpenComputer. OpenComputer is an open source cloud coding agent for teams that can run in your own cloud account (AWS, GCP, Azure). We run the agent harness and the sandbox on the same durable VM (architecture in the docs [1]). First commit lands in 24s;…" data-en="Original excerpt (AI summary unavailable): Hi HN! Utpal here, I&#39;m one of the founders of OpenComputer. OpenComputer is an open source cloud coding agent for teams that can run in your own cloud account (AWS, GCP, Azure). We run the agent harness and the sandbox on the same durable VM (architecture in the docs [1]). First commit lands in 24s;…">【原文摘要，未经 AI 整理】Hi HN! Utpal here, I&#39;m one of the founders of OpenComputer. OpenComputer is an open source cloud coding agent for teams that can run in your own cloud account (AWS, GCP, Azure). We run the agent harness and the sandbox on the same durable VM (architecture in the docs [1]). First commit lands in 24s;…</p>
+  <h3 class="news-title" data-zh="Show HN：OpenComputer – Devin 的开源替代品" data-en="Show HN: OpenComputer – an open source alternative to Devin">Show HN：OpenComputer – Devin 的开源替代品</h3>
+  <p class="news-summary" data-zh="【自动翻译】嗨，HN！乌帕尔在这里，我是 OpenComputer 的创始人之一。 OpenComputer 是一个开源云编码代理，适用于可以在您自己的云帐户（AWS、GCP、Azure）中运行的团队。我们在同一个持久虚拟机上运行代理工具和沙箱（文档 [1] 中的架构）。第一次提交在 24 秒内落地；…" data-en="Original excerpt (AI summary unavailable): Hi HN! Utpal here, I&#39;m one of the founders of OpenComputer. OpenComputer is an open source cloud coding agent for teams that can run in your own cloud account (AWS, GCP, Azure). We run the agent harness and the sandbox on the same durable VM (architecture in the docs [1]). First commit lands in 24s;…">【自动翻译】嗨，HN！乌帕尔在这里，我是 OpenComputer 的创始人之一。 OpenComputer 是一个开源云编码代理，适用于可以在您自己的云帐户（AWS、GCP、Azure）中运行的团队。我们在同一个持久虚拟机上运行代理工具和沙箱（文档 [1] 中的架构）。第一次提交在 24 秒内落地；…</p>
   
   <div class="news-meta">
     <span class="source">Hacker News (Top Stories)</span>
@@ -169,12 +181,13 @@
       <article class="news-card is-highlight"
          data-id="nbe8226d8a1bb" data-category="ai" data-importance="4">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★☆</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="Vibecoding an inference chip" data-en="Vibecoding an inference chip">Vibecoding an inference chip</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】Hacker News: 142 points, 59 comments." data-en="Original excerpt (AI summary unavailable): Hacker News: 142 points, 59 comments.">【原文摘要，未经 AI 整理】Hacker News: 142 points, 59 comments.</p>
+  <h3 class="news-title" data-zh="对推理芯片进行 Vibecoding" data-en="Vibecoding an inference chip">对推理芯片进行 Vibecoding</h3>
+  <p class="news-summary" data-zh="【自动翻译】黑客新闻：144分，61条评论。" data-en="Original excerpt (AI summary unavailable): Hacker News: 144 points, 61 comments.">【自动翻译】黑客新闻：144分，61条评论。</p>
   
   <div class="news-meta">
     <span class="source">Hacker News (Top Stories)</span>
@@ -191,12 +204,13 @@
       <article class="news-card is-highlight"
          data-id="nfd2811614640" data-category="ai" data-importance="5">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★★</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day" data-en="Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day">Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】Hacker News: 285 points, 554 comments." data-en="Original excerpt (AI summary unavailable): Hacker News: 285 points, 554 comments.">【原文摘要，未经 AI 整理】Hacker News: 285 points, 554 comments.</p>
+  <h3 class="news-title" data-zh="由于人工智能抛售抑制了 Anthropic 的第二天，纳斯达克指数抹去了 2026 年的全部涨幅" data-en="Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day">由于人工智能抛售抑制了 Anthropic 的第二天，纳斯达克指数抹去了 2026 年的全部涨幅</h3>
+  <p class="news-summary" data-zh="【自动翻译】黑客新闻：301分，568条评论。" data-en="Original excerpt (AI summary unavailable): Hacker News: 301 points, 568 comments.">【自动翻译】黑客新闻：301分，568条评论。</p>
   
   <div class="news-meta">
     <span class="source">Hacker News (Top Stories)</span>
@@ -213,12 +227,13 @@
       <article class="news-card is-highlight"
          data-id="n9decb60bc5f4" data-category="ai" data-importance="5">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★★</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="谷歌发布用于机器人控制、仿真和策略优化的 Gemini 4 Argon" data-en="谷歌发布用于机器人控制、仿真和策略优化的 Gemini 4 Argon">谷歌发布用于机器人控制、仿真和策略优化的 Gemini 4 Argon</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】点击查看原文&gt;" data-en="Original excerpt (AI summary unavailable): 点击查看原文&gt;">【原文摘要，未经 AI 整理】点击查看原文&gt;</p>
+  <h3 class="news-title" data-zh="谷歌发布用于机器人控制、仿真和策略优化的 Gemini 4 Argon" data-en="Google releases Gemini 4 Argon for robot control, simulation and policy optimization">谷歌发布用于机器人控制、仿真和策略优化的 Gemini 4 Argon</h3>
+  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】点击查看原文&gt;" data-en="【Auto-translated】Click to view the original text&gt;">【原文摘要，未经 AI 整理】点击查看原文&gt;</p>
   
   <div class="news-meta">
     <span class="source">InfoQ 中文</span>
@@ -235,12 +250,13 @@
       <article class="news-card is-highlight"
          data-id="n000028228240" data-category="ai" data-importance="5">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★★</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="Frostbite: A new CPU architecture discovered, designed and verified by AI" data-en="Frostbite: A new CPU architecture discovered, designed and verified by AI">Frostbite: A new CPU architecture discovered, designed and verified by AI</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】Hacker News: 644 points, 333 comments." data-en="Original excerpt (AI summary unavailable): Hacker News: 644 points, 333 comments.">【原文摘要，未经 AI 整理】Hacker News: 644 points, 333 comments.</p>
+  <h3 class="news-title" data-zh="Frostbite：由 AI 发现、设计和验证的新 CPU 架构" data-en="Frostbite: A new CPU architecture discovered, designed and verified by AI">Frostbite：由 AI 发现、设计和验证的新 CPU 架构</h3>
+  <p class="news-summary" data-zh="【自动翻译】黑客新闻：645分，333条评论。" data-en="Original excerpt (AI summary unavailable): Hacker News: 645 points, 333 comments.">【自动翻译】黑客新闻：645分，333条评论。</p>
   
   <div class="news-meta">
     <span class="source">Hacker News (Top Stories)</span>
@@ -257,12 +273,13 @@
       <article class="news-card is-highlight"
          data-id="nf2dddf2ea7d8" data-category="ai" data-importance="5">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★★</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="These tech outages are giving Y2K, AI agent style" data-en="These tech outages are giving Y2K, AI agent style">These tech outages are giving Y2K, AI agent style</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There&#39;s actually likely something deeper going on, cybersecurity experts say." data-en="Original excerpt (AI summary unavailable): Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There&#39;s actually likely something deeper going on, cybersecurity experts say.">【原文摘要，未经 AI 整理】Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There&#39;s actually likely something deeper going on, cybersecurity experts say.</p>
+  <h3 class="news-title" data-zh="这些技术中断正在带来千年虫、人工智能代理风格" data-en="These tech outages are giving Y2K, AI agent style">这些技术中断正在带来千年虫、人工智能代理风格</h3>
+  <p class="news-summary" data-zh="【自动翻译】最近航空公司预订系统、银行平台和生产力平台的中断真的是巧合吗？网络安全专家表示，实际上可能存在更深层次的问题。" data-en="Original excerpt (AI summary unavailable): Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There&#39;s actually likely something deeper going on, cybersecurity experts say.">【自动翻译】最近航空公司预订系统、银行平台和生产力平台的中断真的是巧合吗？网络安全专家表示，实际上可能存在更深层次的问题。</p>
   
   <div class="news-meta">
     <span class="source">TechCrunch</span>
@@ -279,12 +296,13 @@
       <article class="news-card is-highlight"
          data-id="n9e9229586485" data-category="ai" data-importance="5">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★★</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="Show HN: I made an audio-to-MIDI model 60x more efficient" data-en="Show HN: I made an audio-to-MIDI model 60x more efficient">Show HN: I made an audio-to-MIDI model 60x more efficient</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】I released dettato, my open weight audio to midi transcription model. It beats muscriptor 1.3b on every set and is roughly 60x smaller, without training on copyrighted recordings. Feel free to ask questions" data-en="Original excerpt (AI summary unavailable): I released dettato, my open weight audio to midi transcription model. It beats muscriptor 1.3b on every set and is roughly 60x smaller, without training on copyrighted recordings. Feel free to ask questions">【原文摘要，未经 AI 整理】I released dettato, my open weight audio to midi transcription model. It beats muscriptor 1.3b on every set and is roughly 60x smaller, without training on copyrighted recordings. Feel free to ask questions</p>
+  <h3 class="news-title" data-zh="Show HN：我将音频转 MIDI 模型的效率提高了 60 倍" data-en="Show HN: I made an audio-to-MIDI model 60x more efficient">Show HN：我将音频转 MIDI 模型的效率提高了 60 倍</h3>
+  <p class="news-summary" data-zh="【自动翻译】我发布了 dettato，我的开放重量音频到 midi 转录模型。它在每组数据上都击败了 muscriptor 1.3b，并且体积小了大约 60 倍，并且无需对受版权保护的录音进行训练。欢迎提问" data-en="Original excerpt (AI summary unavailable): I released dettato, my open weight audio to midi transcription model. It beats muscriptor 1.3b on every set and is roughly 60x smaller, without training on copyrighted recordings. Feel free to ask questions">【自动翻译】我发布了 dettato，我的开放重量音频到 midi 转录模型。它在每组数据上都击败了 muscriptor 1.3b，并且体积小了大约 60 倍，并且无需对受版权保护的录音进行训练。欢迎提问</p>
   
   <div class="news-meta">
     <span class="source">Hacker News (Top Stories)</span>
@@ -301,18 +319,19 @@
       <article class="news-card is-highlight"
          data-id="ne22dd6f96618" data-category="ai" data-importance="4">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★☆</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="janestreet/agent_skills" data-en="janestreet/agent_skills">janestreet/agent_skills</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】Agent skills" data-en="Original excerpt (AI summary unavailable): Agent skills">【原文摘要，未经 AI 整理】Agent skills</p>
+  <h3 class="news-title" data-zh="Janestreet/agent_skills" data-en="janestreet/agent_skills">Janestreet/agent_skills</h3>
+  <p class="news-summary" data-zh="【自动翻译】代理技巧" data-en="Original excerpt (AI summary unavailable): Agent skills">【自动翻译】代理技巧</p>
   
   <div class="news-meta">
     <span class="source">GitHub (Search-based Trending Proxy)</span>
     <span class="dot">·</span>
     <time datetime="2026-11-03T16:50:21Z">2026-11-04 00:50 <span class="" data-zh="北京时间" data-en="BJT">北京时间</span></time>
-    <span class="dot">·</span><span class="note">基于 GitHub 搜索 API 的近期高星仓库代理数据，非官方 Trending 排名。</span>
+    <span class="dot">·</span><span class="note" data-zh="基于 GitHub 搜索 API 的近期高星仓库代理数据，非官方 Trending 排名。" data-en="GitHub search proxy data, not the official Trending list.">基于 GitHub 搜索 API 的近期高星仓库代理数据，非官方 Trending 排名。</span>
   </div>
   <a class="news-link" href="https://github.com/janestreet/agent_skills" target="_blank" rel="noopener noreferrer"><span class="" data-zh="阅读原文 ↗" data-en="Read original ↗">阅读原文 ↗</span></a>
 </article>
@@ -323,18 +342,19 @@
       <article class="news-card is-highlight"
          data-id="n76e502c4ebad" data-category="ai" data-importance="4">
   <div class="card-top">
-    <span class="badge badge-category">人工智能 / AI &amp; Artificial Intelligence</span>
+    <span class="badge badge-category"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></span>
     <span class="badge badge-importance" title="Importance / 重要性">★★★★☆</span>
-    <span class="badge badge-raw"><span class="" data-zh="原文摘要" data-en="Original excerpt">原文摘要</span></span>
+    <span class="badge badge-auto"><span class="" data-zh="自动翻译" data-en="Auto-translated">自动翻译</span></span>
+    
   </div>
-  <h3 class="news-title" data-zh="deepseek-ai/dsh-superagent-prototype" data-en="deepseek-ai/dsh-superagent-prototype">deepseek-ai/dsh-superagent-prototype</h3>
-  <p class="news-summary" data-zh="【原文摘要，未经 AI 整理】Towards a More Autonomous Agent System" data-en="Original excerpt (AI summary unavailable): Towards a More Autonomous Agent System">【原文摘要，未经 AI 整理】Towards a More Autonomous Agent System</p>
+  <h3 class="news-title" data-zh="deepseek-ai/dsh-superagent-原型" data-en="deepseek-ai/dsh-superagent-prototype">deepseek-ai/dsh-superagent-原型</h3>
+  <p class="news-summary" data-zh="【自动翻译】迈向更加自主的代理系统" data-en="Original excerpt (AI summary unavailable): Towards a More Autonomous Agent System">【自动翻译】迈向更加自主的代理系统</p>
   
   <div class="news-meta">
     <span class="source">GitHub (Search-based Trending Proxy)</span>
     <span class="dot">·</span>
     <time datetime="2026-10-31T09:32:46Z">2026-10-31 17:32 <span class="" data-zh="北京时间" data-en="BJT">北京时间</span></time>
-    <span class="dot">·</span><span class="note">基于 GitHub 搜索 API 的近期高星仓库代理数据，非官方 Trending 排名。</span>
+    <span class="dot">·</span><span class="note" data-zh="基于 GitHub 搜索 API 的近期高星仓库代理数据，非官方 Trending 排名。" data-en="GitHub search proxy data, not the official Trending list.">基于 GitHub 搜索 API 的近期高星仓库代理数据，非官方 Trending 排名。</span>
   </div>
   <a class="news-link" href="https://github.com/deepseek-ai/dsh-superagent-prototype" target="_blank" rel="noopener noreferrer"><span class="" data-zh="阅读原文 ↗" data-en="Read original ↗">阅读原文 ↗</span></a>
 </article>
@@ -343,13 +363,13 @@
   </div>
   <p class="empty-note" id="no-results" hidden><span class="" data-zh="没有匹配的新闻。" data-en="No matching stories.">没有匹配的新闻。</span></p>
 </section>
-<script type="application/json" id="app-data">[{"category": "ai", "id": "nd5eeee1878b5", "importance": 4, "published_at": "2026-11-21T05:38:01Z", "search": "clawdos \u2013 an ai coding agent for dos clawdos \u2013 an ai coding agent for dos \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011hacker news: 46 points, 13 comments. original excerpt (ai summary unavailable): hacker news: 46 points, 13 comments. hacker news (top stories) clawdos \u2013 an ai coding agent for dos ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-21 13:38"}, {"category": "ai", "id": "nc4b0222f29f2", "importance": 5, "published_at": "2026-11-20T21:47:10Z", "search": "meta reconsiders 2030 net-zero goal amid record emissions from ai data centers meta reconsiders 2030 net-zero goal amid record emissions from ai data centers \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011meta is \u201cre-evaluating\u201d 2030 sustainability goals. will others follow? original excerpt (ai summary unavailable): meta is \u201cre-evaluating\u201d 2030 sustainability goals. will others follow? ars technica meta reconsiders 2030 net-zero goal amid record emissions from ai data centers ", "source": "Ars Technica", "time_bj": "2026-11-21 05:47"}, {"category": "ai", "id": "n6787a271fdfe", "importance": 5, "published_at": "2026-11-20T20:58:29Z", "search": "experts warn: nearly everyone in ai is susceptible to a honey-trap scheme right now experts warn: nearly everyone in ai is susceptible to a honey-trap scheme right now \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011techies are building technology that can advance all aspects of the world \u2014 but can they protect their hearts? that\u0027s the vulnerability that honey pots exploit. original excerpt (ai summary unavailable): techies are building technology that can advance all aspects of the world \u2014 but can they protect their hearts? that\u0027s the vulnerability that honey pots exploit. techcrunch experts warn: nearly everyone in ai is susceptible to a honey-trap scheme right now ", "source": "TechCrunch", "time_bj": "2026-11-21 04:58"}, {"category": "ai", "id": "n00dcab6deae0", "importance": 5, "published_at": "2026-11-20T20:19:56Z", "search": "show hn: opencomputer \u2013 an open source alternative to devin show hn: opencomputer \u2013 an open source alternative to devin \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011hi hn! utpal here, i\u0027m one of the founders of opencomputer. opencomputer is an open source cloud coding agent for teams that can run in your own cloud account (aws, gcp, azure). we run the agent harness and the sandbox on the same durable vm (architecture in the docs [1]). first commit lands in 24s;\u2026 original excerpt (ai summary unavailable): hi hn! utpal here, i\u0027m one of the founders of opencomputer. opencomputer is an open source cloud coding agent for teams that can run in your own cloud account (aws, gcp, azure). we run the agent harness and the sandbox on the same durable vm (architecture in the docs [1]). first commit lands in 24s;\u2026 hacker news (top stories) show hn: opencomputer \u2013 an open source alternative to devin ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-21 04:19"}, {"category": "ai", "id": "nbe8226d8a1bb", "importance": 4, "published_at": "2026-11-20T18:15:16Z", "search": "vibecoding an inference chip vibecoding an inference chip \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011hacker news: 142 points, 59 comments. original excerpt (ai summary unavailable): hacker news: 142 points, 59 comments. hacker news (top stories) vibecoding an inference chip ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-21 02:15"}, {"category": "ai", "id": "nfd2811614640", "importance": 5, "published_at": "2026-11-20T13:29:59Z", "search": "nasdaq erases all 2026 gains as ai sell-off dampens anthropic\u2019s second day nasdaq erases all 2026 gains as ai sell-off dampens anthropic\u2019s second day \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011hacker news: 285 points, 554 comments. original excerpt (ai summary unavailable): hacker news: 285 points, 554 comments. hacker news (top stories) nasdaq erases all 2026 gains as ai sell-off dampens anthropic\u2019s second day ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-20 21:29"}, {"category": "ai", "id": "n9decb60bc5f4", "importance": 5, "published_at": "2026-11-20T11:00:00Z", "search": "\u8c37\u6b4c\u53d1\u5e03\u7528\u4e8e\u673a\u5668\u4eba\u63a7\u5236\u3001\u4eff\u771f\u548c\u7b56\u7565\u4f18\u5316\u7684 gemini 4 argon \u8c37\u6b4c\u53d1\u5e03\u7528\u4e8e\u673a\u5668\u4eba\u63a7\u5236\u3001\u4eff\u771f\u548c\u7b56\u7565\u4f18\u5316\u7684 gemini 4 argon \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011\u70b9\u51fb\u67e5\u770b\u539f\u6587\u003e original excerpt (ai summary unavailable): \u70b9\u51fb\u67e5\u770b\u539f\u6587\u003e infoq \u4e2d\u6587 \u8c37\u6b4c\u53d1\u5e03\u7528\u4e8e\u673a\u5668\u4eba\u63a7\u5236\u3001\u4eff\u771f\u548c\u7b56\u7565\u4f18\u5316\u7684 gemini 4 argon ", "source": "InfoQ \u4e2d\u6587", "time_bj": "2026-11-20 19:00"}, {"category": "ai", "id": "n000028228240", "importance": 5, "published_at": "2026-11-20T10:01:41Z", "search": "frostbite: a new cpu architecture discovered, designed and verified by ai frostbite: a new cpu architecture discovered, designed and verified by ai \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011hacker news: 644 points, 333 comments. original excerpt (ai summary unavailable): hacker news: 644 points, 333 comments. hacker news (top stories) frostbite: a new cpu architecture discovered, designed and verified by ai ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-20 18:01"}, {"category": "ai", "id": "nf2dddf2ea7d8", "importance": 5, "published_at": "2026-11-19T21:42:31Z", "search": "these tech outages are giving y2k, ai agent style these tech outages are giving y2k, ai agent style \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? there\u0027s actually likely something deeper going on, cybersecurity experts say. original excerpt (ai summary unavailable): are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? there\u0027s actually likely something deeper going on, cybersecurity experts say. techcrunch these tech outages are giving y2k, ai agent style ", "source": "TechCrunch", "time_bj": "2026-11-20 05:42"}, {"category": "ai", "id": "n9e9229586485", "importance": 5, "published_at": "2026-11-17T01:03:05Z", "search": "show hn: i made an audio-to-midi model 60x more efficient show hn: i made an audio-to-midi model 60x more efficient \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011i released dettato, my open weight audio to midi transcription model. it beats muscriptor 1.3b on every set and is roughly 60x smaller, without training on copyrighted recordings. feel free to ask questions original excerpt (ai summary unavailable): i released dettato, my open weight audio to midi transcription model. it beats muscriptor 1.3b on every set and is roughly 60x smaller, without training on copyrighted recordings. feel free to ask questions hacker news (top stories) show hn: i made an audio-to-midi model 60x more efficient ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-17 09:03"}, {"category": "ai", "id": "ne22dd6f96618", "importance": 4, "published_at": "2026-11-03T16:50:21Z", "search": "janestreet/agent_skills janestreet/agent_skills \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011agent skills original excerpt (ai summary unavailable): agent skills github (search-based trending proxy) janestreet/agent_skills ", "source": "GitHub (Search-based Trending Proxy)", "time_bj": "2026-11-04 00:50"}, {"category": "ai", "id": "n76e502c4ebad", "importance": 4, "published_at": "2026-10-31T09:32:46Z", "search": "deepseek-ai/dsh-superagent-prototype deepseek-ai/dsh-superagent-prototype \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011towards a more autonomous agent system original excerpt (ai summary unavailable): towards a more autonomous agent system github (search-based trending proxy) deepseek-ai/dsh-superagent-prototype ", "source": "GitHub (Search-based Trending Proxy)", "time_bj": "2026-10-31 17:32"}]</script>
+<script type="application/json" id="app-data">[{"category": "ai", "id": "nd5eeee1878b5", "importance": 4, "published_at": "2026-11-21T05:38:01Z", "search": "clawdos \u2013 dos \u7684\u4eba\u5de5\u667a\u80fd\u7f16\u7801\u4ee3\u7406 clawdos \u2013 an ai coding agent for dos \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011\u9ed1\u5ba2\u65b0\u95fb\uff1a56\u5206\uff0c15\u6761\u8bc4\u8bba\u3002 original excerpt (ai summary unavailable): hacker news: 56 points, 15 comments. hacker news (top stories) clawdos \u2013 an ai coding agent for dos ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-21 13:38"}, {"category": "ai", "id": "nc4b0222f29f2", "importance": 5, "published_at": "2026-11-20T21:47:10Z", "search": "\u5728 ai \u6570\u636e\u4e2d\u5fc3\u6392\u653e\u521b\u7eaa\u5f55\u4e4b\u9645\uff0cmeta \u91cd\u65b0\u8003\u8651 2030 \u5e74\u51c0\u96f6\u6392\u653e\u76ee\u6807 meta reconsiders 2030 net-zero goal amid record emissions from ai data centers \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011meta \u6b63\u5728\u201c\u91cd\u65b0\u8bc4\u4f30\u201d2030 \u5e74\u53ef\u6301\u7eed\u53d1\u5c55\u76ee\u6807\u3002\u5176\u4ed6\u4eba\u4f1a\u6548\u4eff\u5417\uff1f original excerpt (ai summary unavailable): meta is \u201cre-evaluating\u201d 2030 sustainability goals. will others follow? ars technica meta reconsiders 2030 net-zero goal amid record emissions from ai data centers ", "source": "Ars Technica", "time_bj": "2026-11-21 05:47"}, {"category": "ai", "id": "n6787a271fdfe", "importance": 5, "published_at": "2026-11-20T20:58:29Z", "search": "\u4e13\u5bb6\u8b66\u544a\uff1a\u76ee\u524d\u4eba\u5de5\u667a\u80fd\u9886\u57df\u51e0\u4e4e\u6bcf\u4e2a\u4eba\u90fd\u5bb9\u6613\u53d7\u5230\u201c\u7f8e\u4eba\u8ba1\u201d\u7684\u5f71\u54cd experts warn: nearly everyone in ai is susceptible to a honey-trap scheme right now \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011\u6280\u672f\u4eba\u5458\u6b63\u5728\u6253\u9020\u80fd\u591f\u63a8\u52a8\u4e16\u754c\u5404\u4e2a\u65b9\u9762\u8fdb\u6b65\u7684\u6280\u672f\u2014\u2014\u4f46\u4ed6\u4eec\u80fd\u4fdd\u62a4\u81ea\u5df1\u7684\u5fc3\u810f\u5417\uff1f\u8fd9\u5c31\u662f\u871c\u7f50\u6240\u5229\u7528\u7684\u6f0f\u6d1e\u3002 original excerpt (ai summary unavailable): techies are building technology that can advance all aspects of the world \u2014 but can they protect their hearts? that\u0027s the vulnerability that honey pots exploit. techcrunch experts warn: nearly everyone in ai is susceptible to a honey-trap scheme right now ", "source": "TechCrunch", "time_bj": "2026-11-21 04:58"}, {"category": "ai", "id": "n00dcab6deae0", "importance": 5, "published_at": "2026-11-20T20:19:56Z", "search": "show hn\uff1aopencomputer \u2013 devin \u7684\u5f00\u6e90\u66ff\u4ee3\u54c1 show hn: opencomputer \u2013 an open source alternative to devin \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011\u55e8\uff0chn\uff01\u4e4c\u5e15\u5c14\u5728\u8fd9\u91cc\uff0c\u6211\u662f opencomputer \u7684\u521b\u59cb\u4eba\u4e4b\u4e00\u3002 opencomputer \u662f\u4e00\u4e2a\u5f00\u6e90\u4e91\u7f16\u7801\u4ee3\u7406\uff0c\u9002\u7528\u4e8e\u53ef\u4ee5\u5728\u60a8\u81ea\u5df1\u7684\u4e91\u5e10\u6237\uff08aws\u3001gcp\u3001azure\uff09\u4e2d\u8fd0\u884c\u7684\u56e2\u961f\u3002\u6211\u4eec\u5728\u540c\u4e00\u4e2a\u6301\u4e45\u865a\u62df\u673a\u4e0a\u8fd0\u884c\u4ee3\u7406\u5de5\u5177\u548c\u6c99\u7bb1\uff08\u6587\u6863 [1] \u4e2d\u7684\u67b6\u6784\uff09\u3002\u7b2c\u4e00\u6b21\u63d0\u4ea4\u5728 24 \u79d2\u5185\u843d\u5730\uff1b\u2026 original excerpt (ai summary unavailable): hi hn! utpal here, i\u0027m one of the founders of opencomputer. opencomputer is an open source cloud coding agent for teams that can run in your own cloud account (aws, gcp, azure). we run the agent harness and the sandbox on the same durable vm (architecture in the docs [1]). first commit lands in 24s;\u2026 hacker news (top stories) show hn: opencomputer \u2013 an open source alternative to devin ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-21 04:19"}, {"category": "ai", "id": "nbe8226d8a1bb", "importance": 4, "published_at": "2026-11-20T18:15:16Z", "search": "\u5bf9\u63a8\u7406\u82af\u7247\u8fdb\u884c vibecoding vibecoding an inference chip \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011\u9ed1\u5ba2\u65b0\u95fb\uff1a144\u5206\uff0c61\u6761\u8bc4\u8bba\u3002 original excerpt (ai summary unavailable): hacker news: 144 points, 61 comments. hacker news (top stories) vibecoding an inference chip ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-21 02:15"}, {"category": "ai", "id": "nfd2811614640", "importance": 5, "published_at": "2026-11-20T13:29:59Z", "search": "\u7531\u4e8e\u4eba\u5de5\u667a\u80fd\u629b\u552e\u6291\u5236\u4e86 anthropic \u7684\u7b2c\u4e8c\u5929\uff0c\u7eb3\u65af\u8fbe\u514b\u6307\u6570\u62b9\u53bb\u4e86 2026 \u5e74\u7684\u5168\u90e8\u6da8\u5e45 nasdaq erases all 2026 gains as ai sell-off dampens anthropic\u2019s second day \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011\u9ed1\u5ba2\u65b0\u95fb\uff1a301\u5206\uff0c568\u6761\u8bc4\u8bba\u3002 original excerpt (ai summary unavailable): hacker news: 301 points, 568 comments. hacker news (top stories) nasdaq erases all 2026 gains as ai sell-off dampens anthropic\u2019s second day ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-20 21:29"}, {"category": "ai", "id": "n9decb60bc5f4", "importance": 5, "published_at": "2026-11-20T11:00:00Z", "search": "\u8c37\u6b4c\u53d1\u5e03\u7528\u4e8e\u673a\u5668\u4eba\u63a7\u5236\u3001\u4eff\u771f\u548c\u7b56\u7565\u4f18\u5316\u7684 gemini 4 argon google releases gemini 4 argon for robot control, simulation and policy optimization \u3010\u539f\u6587\u6458\u8981\uff0c\u672a\u7ecf ai \u6574\u7406\u3011\u70b9\u51fb\u67e5\u770b\u539f\u6587\u003e \u3010auto-translated\u3011click to view the original text\u003e infoq \u4e2d\u6587 \u8c37\u6b4c\u53d1\u5e03\u7528\u4e8e\u673a\u5668\u4eba\u63a7\u5236\u3001\u4eff\u771f\u548c\u7b56\u7565\u4f18\u5316\u7684 gemini 4 argon ", "source": "InfoQ \u4e2d\u6587", "time_bj": "2026-11-20 19:00"}, {"category": "ai", "id": "n000028228240", "importance": 5, "published_at": "2026-11-20T10:01:41Z", "search": "frostbite\uff1a\u7531 ai \u53d1\u73b0\u3001\u8bbe\u8ba1\u548c\u9a8c\u8bc1\u7684\u65b0 cpu \u67b6\u6784 frostbite: a new cpu architecture discovered, designed and verified by ai \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011\u9ed1\u5ba2\u65b0\u95fb\uff1a645\u5206\uff0c333\u6761\u8bc4\u8bba\u3002 original excerpt (ai summary unavailable): hacker news: 645 points, 333 comments. hacker news (top stories) frostbite: a new cpu architecture discovered, designed and verified by ai ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-20 18:01"}, {"category": "ai", "id": "nf2dddf2ea7d8", "importance": 5, "published_at": "2026-11-19T21:42:31Z", "search": "\u8fd9\u4e9b\u6280\u672f\u4e2d\u65ad\u6b63\u5728\u5e26\u6765\u5343\u5e74\u866b\u3001\u4eba\u5de5\u667a\u80fd\u4ee3\u7406\u98ce\u683c these tech outages are giving y2k, ai agent style \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011\u6700\u8fd1\u822a\u7a7a\u516c\u53f8\u9884\u8ba2\u7cfb\u7edf\u3001\u94f6\u884c\u5e73\u53f0\u548c\u751f\u4ea7\u529b\u5e73\u53f0\u7684\u4e2d\u65ad\u771f\u7684\u662f\u5de7\u5408\u5417\uff1f\u7f51\u7edc\u5b89\u5168\u4e13\u5bb6\u8868\u793a\uff0c\u5b9e\u9645\u4e0a\u53ef\u80fd\u5b58\u5728\u66f4\u6df1\u5c42\u6b21\u7684\u95ee\u9898\u3002 original excerpt (ai summary unavailable): are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? there\u0027s actually likely something deeper going on, cybersecurity experts say. techcrunch these tech outages are giving y2k, ai agent style ", "source": "TechCrunch", "time_bj": "2026-11-20 05:42"}, {"category": "ai", "id": "n9e9229586485", "importance": 5, "published_at": "2026-11-17T01:03:05Z", "search": "show hn\uff1a\u6211\u5c06\u97f3\u9891\u8f6c midi \u6a21\u578b\u7684\u6548\u7387\u63d0\u9ad8\u4e86 60 \u500d show hn: i made an audio-to-midi model 60x more efficient \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011\u6211\u53d1\u5e03\u4e86 dettato\uff0c\u6211\u7684\u5f00\u653e\u91cd\u91cf\u97f3\u9891\u5230 midi \u8f6c\u5f55\u6a21\u578b\u3002\u5b83\u5728\u6bcf\u7ec4\u6570\u636e\u4e0a\u90fd\u51fb\u8d25\u4e86 muscriptor 1.3b\uff0c\u5e76\u4e14\u4f53\u79ef\u5c0f\u4e86\u5927\u7ea6 60 \u500d\uff0c\u5e76\u4e14\u65e0\u9700\u5bf9\u53d7\u7248\u6743\u4fdd\u62a4\u7684\u5f55\u97f3\u8fdb\u884c\u8bad\u7ec3\u3002\u6b22\u8fce\u63d0\u95ee original excerpt (ai summary unavailable): i released dettato, my open weight audio to midi transcription model. it beats muscriptor 1.3b on every set and is roughly 60x smaller, without training on copyrighted recordings. feel free to ask questions hacker news (top stories) show hn: i made an audio-to-midi model 60x more efficient ", "source": "Hacker News (Top Stories)", "time_bj": "2026-11-17 09:03"}, {"category": "ai", "id": "ne22dd6f96618", "importance": 4, "published_at": "2026-11-03T16:50:21Z", "search": "janestreet/agent_skills janestreet/agent_skills \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011\u4ee3\u7406\u6280\u5de7 original excerpt (ai summary unavailable): agent skills github (search-based trending proxy) janestreet/agent_skills ", "source": "GitHub (Search-based Trending Proxy)", "time_bj": "2026-11-04 00:50"}, {"category": "ai", "id": "n76e502c4ebad", "importance": 4, "published_at": "2026-10-31T09:32:46Z", "search": "deepseek-ai/dsh-superagent-\u539f\u578b deepseek-ai/dsh-superagent-prototype \u3010\u81ea\u52a8\u7ffb\u8bd1\u3011\u8fc8\u5411\u66f4\u52a0\u81ea\u4e3b\u7684\u4ee3\u7406\u7cfb\u7edf original excerpt (ai summary unavailable): towards a more autonomous agent system github (search-based trending proxy) deepseek-ai/dsh-superagent-prototype ", "source": "GitHub (Search-based Trending Proxy)", "time_bj": "2026-10-31 17:32"}]</script>
 </main>
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <div>
-        <strong><span class="" data-zh="科技互联网每日一报" data-en="Tech Internet Daily">科技互联网每日一报</span></strong>
+        <strong><span class="" data-zh="每日一报" data-en="Daily Brief">每日一报</span></strong>
         <p><span class="" data-zh="每日更新 · 内容为 AI 辅助整理的资讯摘要，版权归原作者与媒体所有。" data-en="Updated daily. Summaries are AI-assisted; all rights remain with original authors and publishers.">每日更新 · 内容为 AI 辅助整理的资讯摘要，版权归原作者与媒体所有。</span></p>
       </div>
       <div class="footer-links">

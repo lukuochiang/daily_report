@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
+os.environ["TRANSLATE_ENABLED"] = "false"
 
 from ai_process import process_with_ai  # noqa: E402
 from clean_news import clean_all  # noqa: E402
@@ -119,6 +120,18 @@ class AiProcessingTests(unittest.TestCase):
             articles, _, _, meta = process_with_ai([sample_item()], {}, "2026-11-21")
         self.assertFalse(articles[0]["ai_generated"])
         self.assertEqual(meta["ai_status"], "error")
+
+
+class AutoTranslationTests(unittest.TestCase):
+    def test_translation_fills_other_language(self):
+        item = sample_item()
+        with patch.dict(os.environ, {"AI_API_KEY": "", "TRANSLATE_ENABLED": "true"}), \
+             patch("ai_process.auto_translate", side_effect=lambda text, target: "译文:" + text):
+            articles, _, _, meta = process_with_ai([item], {}, "2026-11-21", force_disabled=True)
+        self.assertEqual(articles[0]["title_zh"], "译文:" + item["original_title"])
+        self.assertTrue(articles[0]["summary_zh"].startswith("【自动翻译】"))
+        self.assertEqual(articles[0]["translation_source"], "auto")
+        self.assertEqual(meta["translation_status"], "auto")
 
 
 class ValidationTests(unittest.TestCase):

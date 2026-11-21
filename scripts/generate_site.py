@@ -15,6 +15,8 @@ PUBLIC_DIR = os.path.join(ROOT, "public")
 DATA_DIR = os.path.join(PUBLIC_DIR, "data")
 SITE_URL = os.environ.get("SITE_URL", "https://daily.fs.kg").rstrip("/")
 DATE_FILE_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})\.json$")
+MONTHS_EN = ["January", "February", "March", "April", "May", "June",
+             "July", "August", "September", "October", "November", "December"]
 
 env = Environment(
     loader=FileSystemLoader(TEMPLATES_DIR),
@@ -31,6 +33,13 @@ def prepare_article(article: dict) -> dict:
     item["date_bj"] = beijing_time(article.get("published_at", ""), "%Y-%m-%d")
     item["cat_zh"], item["cat_en"] = CATEGORY_NAMES.get(
         article.get("category", "internet"), ("其他", "Other"))
+    note = article.get("source_note", "")
+    if note.startswith("基于 GitHub"):
+        item["source_note_en"] = "GitHub search proxy data, not the official Trending list."
+    elif note.startswith("示例数据"):
+        item["source_note_en"] = "Demo data for layout testing only."
+    else:
+        item["source_note_en"] = note
     level = article.get("importance", 2)
     item["stars"] = "★" * level + "☆" * (5 - level)
     return item
@@ -136,7 +145,7 @@ def generate_site(current_data: dict) -> dict:
     }
 
     render("index.html", os.path.join(PUBLIC_DIR, "index.html"), base_context(
-        page_title="科技互联网每日一报 · Tech Internet Daily",
+        page_title="每日一报 · Daily Brief",
         page_description="每日精选全球科技、互联网、人工智能与开发者生态资讯，提供中英双语摘要。",
         canonical=SITE_URL + "/",
         current_date=latest_date, articles=latest_articles, highlights=highlights,
@@ -152,8 +161,8 @@ def generate_site(current_data: dict) -> dict:
         prev_day = days[index + 1][0] if index + 1 < len(days) else None
         next_day = days[index - 1][0] if index > 0 else None
         day_context = base_context(
-            page_title="%s 科技互联网日报 · Tech Daily" % day,
-            page_description="%s 每日科技互联网资讯精选，含中英双语标题与 AI 整理摘要。" % day,
+            page_title="%s 每日一报 · Daily Brief" % day,
+            page_description="%s 每日科技互联网资讯精选，含中英双语标题与整理摘要。" % day,
             canonical="%s/daily/%s/" % (SITE_URL, day),
             current_date=day, articles=articles, highlights=day_highlights,
             trends=data.get("trends", []), app_data=app_data(articles),
@@ -171,13 +180,15 @@ def generate_site(current_data: dict) -> dict:
             "date": day, "count": len(data.get("articles", [])),
             "url": "%s/daily/%s/" % (SITE_URL, day),
             "label": "%s 年 %d 月" % (month[:4], int(month[5:])),
+            "label_en": "%s %s" % (MONTHS_EN[int(month[5:]) - 1], month[:4]),
         })
-    month_list = [{"key": key, "dates": values, "label": values[0]["label"]}
+    month_list = [{"key": key, "dates": values, "label": values[0]["label"],
+                   "label_en": values[0]["label_en"]}
                   for key, values in sorted(months.items(), reverse=True)]
 
     render("archives.html", os.path.join(PUBLIC_DIR, "archives", "index.html"), base_context(
-        page_title="历史日报归档 · Archives | 科技互联网每日一报",
-        page_description="按日期浏览科技互联网每日一报的全部历史日报。",
+        page_title="历史归档 · Archives | 每日一报",
+        page_description="按日期浏览每日一报的全部历史日报。",
         canonical=SITE_URL + "/archives/",
         months=month_list, **global_ctx,
     ))
@@ -195,7 +206,7 @@ def generate_site(current_data: dict) -> dict:
         category_articles = category_articles[:80]
         zh, en = CATEGORY_NAMES[slug]
         render("category.html", os.path.join(PUBLIC_DIR, "categories", slug, "index.html"), base_context(
-            page_title="%s · 科技互联网每日一报" % zh,
+            page_title="%s · 每日一报" % zh,
             page_description="浏览“%s”分类下的科技互联网新闻与中英双语摘要。" % zh,
             canonical="%s/categories/%s/" % (SITE_URL, slug),
             category_slug=slug, category_zh=zh, category_en=en,
@@ -203,12 +214,12 @@ def generate_site(current_data: dict) -> dict:
         ))
 
     render("about.html", os.path.join(PUBLIC_DIR, "about", "index.html"), base_context(
-        page_title="关于我们 · About | 科技互联网每日一报",
-        page_description="了解科技互联网每日一报的数据来源、AI 整理方式、更新频率与版权声明。",
+        page_title="关于我们 · About | 每日一报",
+        page_description="了解每日一报的数据来源、AI 整理方式、更新频率与版权声明。",
         canonical=SITE_URL + "/about/", **global_ctx,
     ))
     render("404.html", os.path.join(PUBLIC_DIR, "404.html"), base_context(
-        page_title="页面未找到 · 404 | 科技互联网每日一报",
+        page_title="页面未找到 · 404 | 每日一报",
         page_description="您访问的页面不存在。",
         canonical=SITE_URL + "/404.html", **global_ctx,
     ))

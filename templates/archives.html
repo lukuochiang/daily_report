@@ -9,11 +9,11 @@
 <section class="wrap section">
   <div class="filter-chips" id="month-filters">
     <button type="button" class="chip active" data-month="all">{{ m.t('全部月份', 'All months') }}</button>
-    {% for month in months %}<button type="button" class="chip" data-month="{{ month.key }}">{{ month.label }}</button>{% endfor %}
+    {% for month in months %}<button type="button" class="chip" data-month="{{ month.key }}">{{ m.t(month.label, month.label_en) }}</button>{% endfor %}
   </div>
   {% for month in months %}
   <div class="month-group" data-month="{{ month.key }}">
-    <h2>{{ month.label }}</h2>
+    <h2>{{ m.t(month.label, month.label_en) }}</h2>
     <div class="archive-grid">
       {% for day in month.dates %}
       <a class="archive-card" href="{{ day.url }}">

@@ -4,12 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>创业与商业 · 科技互联网每日一报</title>
+  <title>创业与商业 · 每日一报</title>
   <meta name="description" content="浏览“创业与商业”分类下的科技互联网新闻与中英双语摘要。">
   <link rel="canonical" href="https://daily.fs.kg/categories/business/">
+  <meta name="theme-color" content="#f5f7fa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="科技互联网每日一报">
-  <meta property="og:title" content="创业与商业 · 科技互联网每日一报">
+  <meta property="og:site_name" content="每日一报">
+  <meta property="og:title" content="创业与商业 · 每日一报">
   <meta property="og:description" content="浏览“创业与商业”分类下的科技互联网新闻与中英双语摘要。">
   <meta property="og:url" content="https://daily.fs.kg/categories/business/">
   <meta name="twitter:card" content="summary">
@@ -21,9 +23,9 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="/">
-        <span class="brand-mark">TD</span>
+        <span class="brand-mark">每</span>
         <span class="brand-text">
-          <strong><span class="" data-zh="科技互联网每日一报" data-en="Tech Internet Daily">科技互联网每日一报</span></strong>
+          <strong><span class="" data-zh="每日一报" data-en="Daily Brief">每日一报</span></strong>
           <small><span class="" data-zh="全球科技资讯 · 每日双语精选" data-en="Global tech news · Daily bilingual brief">全球科技资讯 · 每日双语精选</span></small>
         </span>
       </a>
@@ -33,22 +35,28 @@
         <a href="/categories/ai/"><span class="" data-zh="分类" data-en="Topics">分类</span></a>
         <a href="/about/"><span class="" data-zh="关于" data-en="About">关于</span></a>
       </nav>
-      <button type="button" id="lang-toggle" class="lang-toggle" aria-label="Switch language">EN</button>
+      <div class="header-actions">
+        <button type="button" id="lang-toggle" class="icon-button lang-toggle" aria-label="Switch language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg>
+          <span class="lang-label">EN</span>
+        </button>
+        <button type="button" id="theme-toggle" class="icon-button theme-toggle" aria-label="切换主题"></button>
+      </div>
     </div>
     <div class="category-strip">
       <div class="wrap strip-inner">
         
-        <a href="/categories/ai/">人工智能 <span>/ AI &amp; Artificial Intelligence</span></a>
+        <a href="/categories/ai/"><span class="" data-zh="人工智能" data-en="AI &amp; Artificial Intelligence">人工智能</span></a>
         
-        <a href="/categories/companies/">科技公司 <span>/ Tech Companies</span></a>
+        <a href="/categories/companies/"><span class="" data-zh="科技公司" data-en="Tech Companies">科技公司</span></a>
         
-        <a href="/categories/developers/">开发者生态 <span>/ Developer Ecosystem</span></a>
+        <a href="/categories/developers/"><span class="" data-zh="开发者生态" data-en="Developer Ecosystem">开发者生态</span></a>
         
-        <a href="/categories/internet/">互联网动态 <span>/ Internet &amp; Platforms</span></a>
+        <a href="/categories/internet/"><span class="" data-zh="互联网动态" data-en="Internet &amp; Platforms">互联网动态</span></a>
         
-        <a href="/categories/business/">创业与商业 <span>/ Startups &amp; Business</span></a>
+        <a href="/categories/business/"><span class="" data-zh="创业与商业" data-en="Startups &amp; Business">创业与商业</span></a>
         
-        <a href="/categories/security/">网络安全与政策 <span>/ Cybersecurity &amp; Policy</span></a>
+        <a href="/categories/security/"><span class="" data-zh="网络安全与政策" data-en="Cybersecurity &amp; Policy">网络安全与政策</span></a>
         
       </div>
     </div>
@@ -70,8 +78,8 @@
       <input type="search" id="news-search" autocomplete="off" data-zh-ph="搜索本分类新闻…" data-en-ph="Search this topic…" placeholder="搜索本分类新闻…">
     </label>
     <select id="news-sort" aria-label="排序 / Sort">
-      <option value="time"><span class="" data-zh="按发布时间" data-en="By publish time">按发布时间</span></option>
-      <option value="importance"><span class="" data-zh="按重要性" data-en="By importance">按重要性</span></option>
+      <option value="time" data-zh="按发布时间" data-en="By publish time">按发布时间</option>
+      <option value="importance" data-zh="按重要性" data-en="By importance">按重要性</option>
     </select>
   </div>
   <div class="news-list" id="news-list">
@@ -85,7 +93,7 @@
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <div>
-        <strong><span class="" data-zh="科技互联网每日一报" data-en="Tech Internet Daily">科技互联网每日一报</span></strong>
+        <strong><span class="" data-zh="每日一报" data-en="Daily Brief">每日一报</span></strong>
         <p><span class="" data-zh="每日更新 · 内容为 AI 辅助整理的资讯摘要，版权归原作者与媒体所有。" data-en="Updated daily. Summaries are AI-assisted; all rights remain with original authors and publishers.">每日更新 · 内容为 AI 辅助整理的资讯摘要，版权归原作者与媒体所有。</span></p>
       </div>
       <div class="footer-links">

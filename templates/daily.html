@@ -28,7 +28,7 @@
     <span class="aside-label">{{ m.t('按分类跳转', 'JUMP TO TOPIC') }}</span>
     <div class="aside-topics">
       {% for slug in ['ai','companies','developers','internet','business','security'] %}
-      <a href="/categories/{{ slug }}/">{{ cat_name(slug, 'zh') }}</a>
+      <a href="/categories/{{ slug }}/">{{ m.t(cat_name(slug, 'zh'), cat_name(slug, 'en')) }}</a>
       {% endfor %}
     </div>
   </aside>
@@ -68,12 +68,12 @@
     <div class="filter-chips" id="category-filters">
       <button type="button" class="chip active" data-filter="all">{{ m.t('全部', 'All') }}</button>
       {% for slug in ['ai','companies','developers','internet','business','security'] %}
-      <button type="button" class="chip" data-filter="{{ slug }}">{{ cat_name(slug, 'zh') }}</button>
+      <button type="button" class="chip" data-filter="{{ slug }}">{{ m.t(cat_name(slug, 'zh'), cat_name(slug, 'en')) }}</button>
       {% endfor %}
     </div>
     <select id="news-sort" aria-label="排序 / Sort">
-      <option value="importance">{{ m.t('按重要性', 'By importance') }}</option>
-      <option value="time">{{ m.t('按发布时间', 'By publish time') }}</option>
+      <option value="importance" data-zh="按重要性" data-en="By importance">按重要性</option>
+      <option value="time" data-zh="按发布时间" data-en="By publish time">按发布时间</option>
     </select>
   </div>
   <div class="news-list" id="news-list">

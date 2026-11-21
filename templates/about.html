@@ -3,23 +3,58 @@
 {% block content %}
 <section class="wrap page-head">
   <p class="eyebrow">ABOUT</p>
-  <h1>{{ m.t('关于科技互联网每日一报', 'About Tech Internet Daily') }}</h1>
+  <h1>{{ m.t('关于每日一报', 'About Daily Brief') }}</h1>
   <p>{{ m.t('一个静态、开放、可持续积累的科技资讯双语简报。', 'A static, open and continuously archived bilingual tech brief.') }}</p>
 </section>
 <section class="wrap section prose">
-  <h2>{{ m.t('网站定位', 'What this site is') }}</h2>
-  <p>{{ m.t('网站每天从公开 RSS 与 API 采集全球科技、互联网、人工智能与开发者生态资讯，经过清洗、去重、分类和 AI 辅助整理后，生成中英双语日报。网站不包含数据库、后台服务或动态接口，所有页面均为静态 HTML。', 'The site collects public RSS and API feeds daily, then cleans, deduplicates, classifies and AI-processes them into a bilingual brief. There is no database, backend service or dynamic endpoint: every page is static HTML.') }}</p>
+  <div class="about-row">
+    <div class="about-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></svg>
+    </div>
+    <div class="about-body">
+      <h2>{{ m.t('网站定位', 'What this site is') }}</h2>
+      <p>{{ m.t('网站每天从公开 RSS 与 API 采集全球科技、互联网、人工智能与开发者生态资讯，经过清洗、去重、分类和 AI 辅助整理后，生成中英双语日报。网站不包含数据库、后台服务或动态接口，所有页面均为静态 HTML。', 'The site collects public RSS and API feeds daily, then cleans, deduplicates, classifies and AI-processes them into a bilingual brief. There is no database, backend service or dynamic endpoint: every page is static HTML.') }}</p>
+    </div>
+  </div>
 
-  <h2>{{ m.t('数据来源', 'Sources') }}</h2>
-  <p>{{ m.t('目前接入 TechCrunch、The Verge、Ars Technica、WIRED、InfoQ 中文、Hacker News（Firebase 公开 API）以及 GitHub Search API。GitHub 数据为基于搜索条件的近期高星仓库代理数据，并非官方 Trending 排名。每条新闻均保留原始来源与原文链接。', 'Current sources include TechCrunch, The Verge, Ars Technica, WIRED, InfoQ Chinese, Hacker News (public Firebase API) and the GitHub Search API. GitHub data is a search-based proxy for recently popular repositories, not the official Trending list. Every story keeps its original source and link.') }}</p>
+  <div class="about-row">
+    <div class="about-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+    </div>
+    <div class="about-body">
+      <h2>{{ m.t('数据来源', 'Sources') }}</h2>
+      <p>{{ m.t('目前接入 TechCrunch、The Verge、Ars Technica、WIRED、InfoQ 中文、Hacker News（Firebase 公开 API）以及 GitHub Search API。GitHub 数据为基于搜索条件的近期高星仓库代理数据，并非官方 Trending 排名。每条新闻均保留原始来源与原文链接。', 'Current sources include TechCrunch, The Verge, Ars Technica, WIRED, InfoQ Chinese, Hacker News (public Firebase API) and the GitHub Search API. GitHub data is a search-based proxy for recently popular repositories, not the official Trending list. Every story keeps its original source and link.') }}</p>
+    </div>
+  </div>
 
-  <h2>{{ m.t('AI 整理方式', 'How AI is used') }}</h2>
-  <p>{{ m.t('通过兼容 OpenAI 接口的 DeepSeek API 生成中英双语标题与摘要、分类、重要性评分、重点新闻和趋势分析。AI 仅依据原始标题与摘要工作，不编造事实；结果标注为“AI 整理”。当 AI 不可用或返回异常时，保留原始标题与原文摘要，并明确标注“原文摘要”，不会丢失整份日报。', 'A DeepSeek-compatible API generates bilingual titles and summaries, categories, importance scores, highlights and trends. AI works only from original headlines and excerpts and never invents facts; results are labelled "AI processed". If AI fails, original titles and excerpts are kept and clearly labelled as "Original excerpt", so no issue is lost.') }}</p>
+  <div class="about-row">
+    <div class="about-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg>
+    </div>
+    <div class="about-body">
+      <h2>{{ m.t('AI 整理方式', 'How AI is used') }}</h2>
+      <p>{{ m.t('配置 AI API 后，可生成中英双语标题与摘要、分类、重要性评分、重点新闻和趋势分析；AI 仅依据原始标题与摘要工作，不编造事实，结果标注为“AI 整理”。不配置密钥也能正常使用：由无需密钥的自动翻译补齐另一语言并标注“自动翻译”；翻译不可用时保留原文并标注“原文摘要”。', 'With an AI API configured, the site generates bilingual titles and summaries, categories, importance scores, highlights and trends strictly from original headlines and excerpts; results are labelled "AI processed". No key is required: keyless automatic translation fills in the other language and is labelled "Auto-translated"; if translation fails, original text is kept and labelled "Original excerpt".') }}</p>
+    </div>
+  </div>
 
-  <h2>{{ m.t('更新频率与时间', 'Update frequency & time') }}</h2>
-  <p>{{ m.t('GitHub Actions 于 UTC 22:30（北京时间次日 06:30）自动生成日报，并支持手动触发。定时执行可能排队延迟；所有页面时间均按北京时间（UTC+8）展示。', 'GitHub Actions generates the daily issue at 22:30 UTC (06:30 Beijing time the next day) and supports manual runs. Scheduled runs may be delayed by queueing. All times shown are Beijing time (UTC+8).') }}</p>
+  <div class="about-row">
+    <div class="about-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+    </div>
+    <div class="about-body">
+      <h2>{{ m.t('更新频率与时间', 'Update frequency & time') }}</h2>
+      <p>{{ m.t('GitHub Actions 于 UTC 22:30（北京时间次日 06:30）自动生成日报，并支持手动触发。定时执行可能排队延迟；所有页面时间均按北京时间（UTC+8）展示。', 'GitHub Actions generates the daily issue at 22:30 UTC (06:30 Beijing time the next day) and supports manual runs. Scheduled runs may be delayed by queueing. All times shown are Beijing time (UTC+8).') }}</p>
+    </div>
+  </div>
 
-  <h2>{{ m.t('版权声明', 'Copyright') }}</h2>
-  <p>{{ m.t('本站仅提供新闻标题、链接与简短摘要，不转载媒体全文。原始新闻版权归原作者及发布媒体所有。本站 AI 生成内容仅供信息检索与阅读参考，请以原文为准。', 'This site provides headlines, links and short summaries only; it does not republish full articles. All rights to original reporting belong to the respective authors and publishers. AI-generated text is for reference only; always refer to the original article.') }}</p>
+  <div class="about-row">
+    <div class="about-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+    </div>
+    <div class="about-body">
+      <h2>{{ m.t('版权声明', 'Copyright') }}</h2>
+      <p>{{ m.t('本站仅提供新闻标题、链接与简短摘要，不转载媒体全文。原始新闻版权归原作者及发布媒体所有。本站整理内容仅供信息检索与阅读参考，请以原文为准。', 'This site provides headlines, links and short summaries only; it does not republish full articles. All rights to original reporting belong to the respective authors and publishers. Generated text is for reference only; always refer to the original article.') }}</p>
+    </div>
+  </div>
 </section>
 {% endblock %}
