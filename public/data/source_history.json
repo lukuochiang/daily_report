@@ -1,38 +1,38 @@
 {
   "TechCrunch": {
-    "ok": 7,
+    "ok": 8,
     "failed": 0,
     "skipped": 0
   },
   "The Verge": {
-    "ok": 7,
+    "ok": 8,
     "failed": 0,
     "skipped": 0
   },
   "Ars Technica": {
-    "ok": 7,
+    "ok": 8,
     "failed": 0,
     "skipped": 0
   },
   "WIRED": {
-    "ok": 7,
+    "ok": 8,
     "failed": 0,
     "skipped": 0
   },
   "InfoQ 中文": {
-    "ok": 7,
+    "ok": 8,
     "failed": 0,
     "skipped": 0
   },
   "Hacker News (Top Stories)": {
-    "ok": 7,
+    "ok": 8,
     "failed": 0,
     "skipped": 0
   },
   "GitHub (Search-based Trending Proxy)": {
-    "ok": 7,
+    "ok": 8,
     "failed": 0,
     "skipped": 0
   },
-  "_updated_at": "2026-11-26T04:18:21Z"
+  "_updated_at": "2026-11-27T04:28:02Z"
 }
